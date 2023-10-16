@@ -65,7 +65,6 @@ int handle_percent(va_list my_args)
 
 	_putchar('%');
 	count++;
-	_putchar('\n');
 	return (count);
 
 }
