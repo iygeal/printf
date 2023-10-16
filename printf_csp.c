@@ -47,8 +47,8 @@ int handle_string(va_list my_args)
 		str_count++;
 	}
 
-	return (str_count);
 	_putchar('\n');
+	return (str_count);
 }
 
 /**
