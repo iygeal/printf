@@ -40,7 +40,7 @@ int handle_string(va_list my_args)
 		str = "null";
 	}
 
-	/*Print the string character by character*/
+  /*Print the string character by character*/
 	for (p = str; *p != '\0'; p++)
 	{
 		_putchar(*p);

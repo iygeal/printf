@@ -7,6 +7,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdarg.h>
 
 /**
  * struct format - the format specifier character
@@ -20,13 +21,13 @@ typedef struct format
 	int (*func)(va_list);
 } fmt;
 
+int handle_format(const char *format, int *i, va_list my_args);
 int _printf(const char *format, ...);
 int handle_char(va_list my_args);
 int handle_string(va_list my_args);
 int handle_percent(va_list my_args);
 
 int _putchar(char c);
-int handle_int(va_list my_args);
 
 
 #endif
