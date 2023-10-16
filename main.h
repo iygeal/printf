@@ -30,6 +30,8 @@ int handle_percent(va_list my_args);
 int handle_d(va_list my_args);
 int handle_i(va_list my_args);
 int print_number(int num);
+int print_bin(unsigned int num);
+int handle_bin(va_list my_args);
 
 
 int _putchar(char c);
