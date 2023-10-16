@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <limits.h>
 
 /**
  * struct format - the format specifier character
@@ -28,6 +29,7 @@ int handle_string(va_list my_args);
 int handle_percent(va_list my_args);
 int handle_d(va_list my_args);
 int handle_i(va_list my_args);
+int print_number(int num);
 
 
 int _putchar(char c);
