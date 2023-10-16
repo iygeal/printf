@@ -48,6 +48,7 @@ int handle_string(va_list my_args)
 	}
 
 	return (str_count);
+	_putchar('\n');
 }
 
 /**
