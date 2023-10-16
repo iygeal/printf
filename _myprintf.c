@@ -78,5 +78,6 @@ int _printf(const char *format, ...)
 	}
 	va_end(my_args);
 	return (count);
+	_putchar('\n');
 
 }
