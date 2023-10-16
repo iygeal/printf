@@ -26,6 +26,9 @@ int _printf(const char *format, ...);
 int handle_char(va_list my_args);
 int handle_string(va_list my_args);
 int handle_percent(va_list my_args);
+int handle_d(va_list my_args);
+int handle_i(va_list my_args);
+
 
 int _putchar(char c);
 
