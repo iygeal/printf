@@ -94,6 +94,5 @@ int handle_i(va_list my_args)
 			_putchar(buffer[i]);
 		}
 		free(buffer);
-	_putchar('\n');
 	return (char_count);
 }
