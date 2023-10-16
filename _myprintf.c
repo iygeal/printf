@@ -77,7 +77,7 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(my_args);
-	return (count);
 	_putchar('\n');
+	return (count);
 
 }
