@@ -95,4 +95,5 @@ int handle_i(va_list my_args)
 		}
 		free(buffer);
 	return (char_count);
+	_putchar('\n');
 }
