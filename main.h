@@ -37,6 +37,10 @@ int handle_X(va_list my_args);
 int print_bin(unsigned int num);
 int handle_bin(va_list my_args);
 int handle_p(va_list my_args);
+int convert_hex(unsigned long int n, char *hex);
+void reverse_string(char *str, int length);
+int handle_r(va_list my_args);
+
 
 
 int _putchar(char c);
