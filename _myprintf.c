@@ -59,8 +59,6 @@ int _printf(const char *format, ...)
 	{
 		return (-1);
 	}
-	if (format[0] = '\0')
-		return (NULL);
   /*Iterate over the format string*/
 	while (format && format[i])
 	{
