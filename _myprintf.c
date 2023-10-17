@@ -16,7 +16,8 @@ int handle_format(const char *format, int *i, va_list my_args)
   /*Array of format specification structures*/
 	fmt formats[] = {
 	{'c', handle_char}, {'s', handle_string},
-	{'%', handle_percent}, {'d', handle_d}, {'i', handle_i}, {'\0', NULL}
+	{'%', handle_percent}, {'d', handle_d}, {'i', handle_i},
+	{'p', handle_p}, {'\0', NULL}
 	};
 
   /*Iterate over the format specifier array*/

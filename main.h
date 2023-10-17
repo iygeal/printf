@@ -30,6 +30,7 @@ int handle_percent(va_list my_args);
 int handle_d(va_list my_args);
 int handle_i(va_list my_args);
 int print_number(int num);
+int handle_p(va_list my_args);
 
 
 int _putchar(char c);
