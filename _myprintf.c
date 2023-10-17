@@ -19,7 +19,8 @@ int handle_format(const char *format, int *i, va_list my_args)
 	{'%', handle_percent}, {'d', handle_d}, {'i', handle_i},
 	{'b', handle_bin}, {'u', handle_u},
 	{'o', handle_o}, {'x', handle_x},
-	{'X', handle_X}, {'p', handle_p}, {'r', handle_r}, {'\0', NULL}
+	{'X', handle_X}, {'p', handle_p},
+	{'r', handle_r}, {'R', handle_R}, {'\0', NULL}
 	};
 
   /*Iterate over the format specifier array*/

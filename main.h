@@ -40,6 +40,8 @@ int handle_p(va_list my_args);
 int convert_hex(unsigned long int n, char *hex);
 void reverse_string(char *str, int length);
 int handle_r(va_list my_args);
+char *_rot13(char *str);
+int handle_R(va_list my_args);
 
 
 
