@@ -1,8 +1,10 @@
-#ALX Africa ![alxx](https://github.com/iygeal/printf/assets/120268850/f3a786e1-6a56-4d73-a02e-3d3bea56451d)
+#ALX Africa
 
-#######Simple manual implementation of the printf function in C.
+![alxx](https://github.com/iygeal/printf/assets/120268850/f3a786e1-6a56-4d73-a02e-3d3bea56451d)
 
-##printf()
+#Simple manual implementation of the printf function in C.
+
+#printf()
 
 The printf function is used to print formatted text to the standard output. It is included in the stdio.h file of the standard library.
 
