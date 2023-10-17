@@ -7,9 +7,9 @@
  */
 int handle_p(va_list my_args)
 {
-	int y;
-	int i = 0;
-	char ptr_Arr[20];
+	int j;
+	int i = 2;
+	char ptr_Arr[20] = {0};
 	void *adr = va_arg(my_args, void *);
 
 	unsigned long int n = (unsigned long int)adr;
@@ -28,15 +28,22 @@ int handle_p(va_list my_args)
 	}
 	ptr_Arr[0] = '0';
 	ptr_Arr[1] = 'x';
-	for (y = 19; y >= 2 && temp; y--)
+
+	while (temp != 0)
 	{
-		ptr_Arr[y] = "0123456789abcdef"[temp % 16];
+		ptr_Arr[i++] = "0123456789abcdef"[temp % 16];
 		temp = temp / 16;
 	}
+		for (j = 2; j < (i / 2); j++)
+		{
+			char temp = ptr_Arr[j];
 
-	for (i = 0; i < 20; i++)
-	{
-		_putchar(ptr_Arr[i]);
-	}
-	return (20 - y);
+			ptr_Arr[j] = ptr_Arr[i - j + 1];
+			ptr_Arr[i - j + 1] = temp;
+		}
+		for (i = 0; i < 20 && ptr_Arr[i] != 0; i++)
+		{
+			_putchar(ptr_Arr[i]);
+		}
+		return (i);
 }
