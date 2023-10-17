@@ -1,4 +1,4 @@
-#ALX Africa
+ALX Africa!
 ===
 
 Simple manual implementation of the printf function in C.
@@ -48,103 +48,120 @@ The header file is appropriately guarded to avoid multiple definitions of the sa
  * @func: declares a pointer function
 */
 
-typedef struct format
-{
-	char my_spec;
-	int (*func)(va_list);
-} fmt;
+typedef struct format  
+{  
+	char my_spec;  
+	int (*func)(va_list);  
+} fmt;  
 
-int handle_format(const char *format, int *i, va_list my_args);
-int _printf(const char *format, ...);
-int handle_char(va_list my_args);
-int handle_string(va_list my_args);
-int handle_percent(va_list my_args);
-int handle_d(va_list my_args);
-int handle_i(va_list my_args);
-int handle_num(unsigned int n);
-int handle_u(va_list my_args);
-int handle_o(va_list my_args);
-int handle_x(va_list my_args);
-int handle_X(va_list my_args);
-int print_bin(unsigned int num);
-int handle_bin(va_list my_args);
-int handle_p(va_list my_args);
-int convert_hex(unsigned long int n, char *hex);
-void reverse_string(char *str, int length);
-int handle_r(va_list my_args);
-char *_rot13(char *str);
-int handle_R(va_list my_args);
+int handle_format(const char *format, int *i, va_list my_args);  
+int _printf(const char *format, ...);  
+int handle_char(va_list my_args);  
+int handle_string(va_list my_args);  
+int handle_percent(va_list my_args);  
+int handle_d(va_list my_args);  
+int handle_i(va_list my_args);  
+int handle_num(unsigned int n);  
+int handle_u(va_list my_args);  
+int handle_o(va_list my_args);  
+int handle_x(va_list my_args);  
+int handle_X(va_list my_args);  
+int print_bin(unsigned int num);  
+int handle_bin(va_list my_args);  
+int handle_p(va_list my_args);  
+int convert_hex(unsigned long int n, char *hex);  
+void reverse_string(char *str, int length);  
+int handle_r(va_list my_args);  
+char *_rot13(char *str);  
+int handle_R(va_list my_args);  
+
+  
+  
+int _putchar(char c);  
 
 
+#endif`  
 
-int _putchar(char c);
+Below are functions used in this implementation:
+---
 
-
-#endif`
-
-##Below are functions used in this implementation:
-
-###int _printf(const char *format, ...):
+**int _printf(const char *format, ...):**
 Custom printf that produces output according to a format.
 
-###int handle_d(va_list my_args): 
+**int handle_d(va_list my_args):** 
 Function that handles 'd' integer specifiers and prints the corresponding integer.
 
-###int handle_i(va_list my_args): 
+**int handle_i(va_list my_args):** 
 Function that handles 'i' integer specifiers and prints the corresponding integer.
 
-###int handle_format(const char *format, int *i, va_list my_args): 
+int handle_format(const char *format, int *i, va_list my_args): 
+    ---
 Handles the format specifier in the given format string.
 
-###int _putchar(char c): 
+**int _putchar(char c):** 
 Writes the character c to stdout.
 
-###int handle_bin(va_list my_args): 
+**int handle_bin(va_list my_args):** 
 Function that handles 'b' specifier and prints the binary representation of an unsigned integer.
 
-###int print_bin(unsigned int num): 
+int print_bin(unsigned int num): 
+---
 Auxiliary function that prints the binary representation of an unsigned integer.
 
-###int convert_hex(unsigned long int n, char *hex): 
+int convert_hex(unsigned long int n, char *hex): 
+---
 Converts an unsigned long int to a hex string.
 
-###void reverse_string(char *str, int length): 
+void reverse_string(char *str, int length): 
+---
 Reverses a string.
 
-###int handle_p(va_list my_args):
+int handle_p(va_list my_args):
+---
 Handles the %p conversion specifier and prints the memory address.
 
-###int handle_r(va_list my_args): 
+int handle_r(va_list my_args): 
+---
 Handles the %r conversion specifier and prints a string in reverse.
 
-###char *_rot13(char *str): 
+char *_rot13(char *str): 
+---
 Encodes a string using ROT13 encryption.
 
-###int handle_R(va_list my_args): 
+int handle_R(va_list my_args): 
+---
 Handles the %R conversion specifier and prints a string encoded in ROT13.
 
-###int handle_num(unsigned int n): 
+int handle_num(unsigned int n): 
+---
 Function to print an integer digit by digit.
 
-###int handle_u(va_list my_args): 
+int handle_u(va_list my_args): 
+---
 Function to handle 'u' specifier and print an unsigned integer.
 
-###int handle_o(va_list my_args): 
+int handle_o(va_list my_args): 
+---
 Function to handle 'o' specifier and print an octal representation of an unsigned integer.
 
-###int handle_x(va_list my_args): 
+int handle_x(va_list my_args): 
+---
 Function to handle 'x' specifier and print a hexadecimal representation (lowercase) of an unsigned integer.
 
-###int handle_X(va_list my_args): 
+int handle_X(va_list my_args): 
+---
 Function to handle 'X' specifier and print a hexadecimal representation (uppercase) of an unsigned integer.
 
-###int handle_char(va_list my_args): 
+int handle_char(va_list my_args): 
+---
 Function that handles 'c' specifier and prints a character.
 
-###int handle_string(va_list my_args): 
+int handle_string(va_list my_args): 
+---
 Function that handles 's' specifier and prints a string.
 
-###int handle_percent(va_list my_args): 
+int handle_percent(va_list my_args): 
+---
 Handles the '%%' specifier and prints a '%' character.
 
 
