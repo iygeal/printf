@@ -1,11 +1,10 @@
 #ALX Africa
+===
 
-![alxx](https://github.com/iygeal/printf/assets/120268850/f3a786e1-6a56-4d73-a02e-3d3bea56451d)
-
-#Simple manual implementation of the printf function in C.
-
-#printf()
-
+Simple manual implementation of the printf function in C.
+---
+printf()
+---
 The printf function is used to print formatted text to the standard output. It is included in the stdio.h file of the standard library.
 
 The format string contains zero or more directives, which can be either literal characters or encoded conversion specifications that describe how to format arguemt(s) in the output.
@@ -19,11 +18,12 @@ In the above, `format` is a string that contains text to be printed to the stand
 When printf is run alone, it returns an integer value which represents the number of characters transmitted to the standard output stream. If output/encoding error occurs, printf returns a negative value.
 
 *_printf*
-===
+---
 
 My partner and I created a function that imitates the printf function.
 
-####main.h
+main.h
+---
 This contains all the function prototypes used in the manual implementation of the printf function. It also contains a typedef declaration of struct format. This structure has two members: 'my_spec', which is a character that represents the format specifier, and 'fun', which is a pointer to the function that should be called when the format specifier is encountered in the _printf() function.
 
 It also contains some header files from the C standard library - notably, `stdarg.h` - which are used in this implementation.
@@ -33,14 +33,14 @@ The header file is appropriately guarded to avoid multiple definitions of the sa
 `#ifndef MAIN_H
 #define MAIN_H
 
-#include <stdarg.h>
-#include <stddef.h>
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include <limits.h>
+#include <stdarg.h>  
+#include <stddef.h>  
+#include <unistd.h>  
+#include <string.h>  
+#include <stdio.h>  
+#include <stdlib.h>  
+#include <stdarg.h>  
+#include <limits.h>  
 
 /**
  * struct format - the format specifier character
