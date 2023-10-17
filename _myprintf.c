@@ -60,8 +60,6 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 	
-	if (format[0] == '\0')
-		return (0);
   /*Iterate over the format string*/
 	while (format && format[i])
 	{
