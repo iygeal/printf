@@ -1,42 +1,4 @@
 #include "main.h"
-
-/**
- * print_number - function that prints an integer
- * @num: argument representing integer to be displayed
- * Return: Returns count of printed characters
-*/
-
-int print_number(int num)
-{
-	int char_count = 0;
-
-	/*special handling for INT_MIN*/
-	if (num == INT_MIN)
-	{
-		_putchar('-');
-		_putchar('2');
-		num = 147483648;
-		char_count = char_count + 2;
-	}
-
-	/*general handling for negative numbers*/
-	else if (num < 0)
-	{
-		_putchar('-');
-		num *= -1;
-		char_count++;
-	}
-
-	/*recursive call for numbers greater than 10*/
-	if (num >= 10)
-		char_count = char_count + print_number(num / 10);
-
-	_putchar(num % 10 + '0');
-	char_count++;
-
-	return (char_count);
-}
-
 /**
  * handle_d - Function that handles 'd' integer specifiers
  * @my_args: Arguments to pass as integers
@@ -44,8 +6,9 @@ int print_number(int num)
  */
 int handle_d(va_list my_args)
 {
-	int char_count = 0;
-	/*retrieve the next argument as an integer*/
+	int i, char_count = 0, temp = 0;
+	int digit_count = 0;
+	char *buffer;
 	int digit = va_arg(my_args, int);
 
 	if (digit < 0)
@@ -61,13 +24,29 @@ int handle_d(va_list my_args)
 	}
 	else
 	{
-		char_count = char_count + print_number(digit);
+		temp = digit;
+		while (temp != 0)
+		{
+			temp /= 10;
+			digit_count++;
+		}
+		buffer = malloc(digit_count * sizeof(char));
+		if (buffer == NULL)
+			return (-1);
 	}
+		for (i = 0; i < digit_count; i++)
+		{
+			buffer[i] = digit % 10 + '0';
+			digit /= 10;
+			char_count++;
+		}
+		for (i = digit_count - 1; i >= 0; i--)
+		{
+			_putchar(buffer[i]);
+		}
+		free(buffer);
 	return (char_count);
-
 }
-
-
 
 /**
  * handle_i - Function that handles 'i' integer specifiers
@@ -76,8 +55,9 @@ int handle_d(va_list my_args)
  */
 int handle_i(va_list my_args)
 {
-	int char_count = 0;
-	/*retrieve the next argument as an integer*/
+	int i, char_count = 0, temp = 0;
+	int digit_count = 0;
+	char *buffer;
 	int digit = va_arg(my_args, int);
 
 	if (digit < 0)
@@ -93,7 +73,26 @@ int handle_i(va_list my_args)
 	}
 	else
 	{
-		char_count = char_count + print_number(digit);
+		temp = digit;
+		while (temp != 0)
+		{
+			temp /= 10;
+			digit_count++;
+		}
+		buffer = malloc(digit_count * sizeof(char));
+		if (buffer == NULL)
+			return (-1);
 	}
+		for (i = 0; i < digit_count; i++)
+		{
+			buffer[i] = digit % 10 + '0';
+			digit /= 10;
+			char_count++;
+		}
+		for (i = digit_count - 1; i >= 0; i--)
+		{
+			_putchar(buffer[i]);
+		}
+		free(buffer);
 	return (char_count);
 }
