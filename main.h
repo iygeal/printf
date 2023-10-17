@@ -29,9 +29,14 @@ int handle_string(va_list my_args);
 int handle_percent(va_list my_args);
 int handle_d(va_list my_args);
 int handle_i(va_list my_args);
-int print_number(int num);
+int handle_num(unsigned int n);
+int handle_u(va_list my_args);
+int handle_o(va_list my_args);
+int handle_x(va_list my_args);
+int handle_X(va_list my_args);
 int print_bin(unsigned int num);
 int handle_bin(va_list my_args);
+int handle_p(va_list my_args);
 
 
 int _putchar(char c);

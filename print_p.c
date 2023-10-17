@@ -1,83 +1,42 @@
 #include "main.h"
 
 /**
- * print_p - function to recursively print hexadecimal
- * @n: the unsigned long integer to be converted and printed
- * Return: the number of characters printed
-*/
-
-int print_p(unsigned long int n)
-{
-	long int x, count = 0;
-	unsigned long int hex_digit;
-	/*recursively divide n by 2 until n is 0 or 1*/
-	if (n > 15)
-	{
-		count += print_p(n / 16);
-	}
-	hex_digit = n % 16;
-
-	_putchar(hex_digit < 10 ? hex_digit + '0' : hex_digit - 10 + 'a');
-	count++;
-
-	return (count);
-}
-
-/**
  * handle_p - Handle the %p conversion specifier
- * @my_args: A va_list form which to retrieve the argument
+ * @my_args: A va_list from which to retrieve the argument
  * Return: The number of characters printed
-*/
-
+ */
 int handle_p(va_list my_args)
 {
-	int count = 0;
+	int y;
+	int i = 0;
+	char ptr_Arr[20];
 	void *adr = va_arg(my_args, void *);
 
-	_putchar('0');
-	_putchar('x');
-	int count = print_p((unsigned long)adr);
-	return (count + 2);
+	unsigned long int n = (unsigned long int)adr;
+	unsigned long int temp = n;
 
-}
-
-/**
- * _printf - function that produces output according to a format
- * @format: a character string
- * Return: the number of characters printed
-*/
-
-int _printf(const char *format, ...)
-{
-	int count = 0;
-	va_list my_args;
-
-	va_start(my_args, format);
-
-	while (*format)
+	if (adr == NULL)
 	{
-		if (*format == '%')
-		{
-			format++;
+		char *null_msg = "NULL PTR";
+		char *c = null_msg;
 
-			switch (*format)
-			{
-				case 'p':
-				{
-					count = count + handle_p(my_args);
-					break;
-				}
-				default:
-				return (-1);
-			}
-		}
-		else
+		while (*c)
 		{
-			_putchar(*format);
-			count++;
+			_putchar(*c++);
 		}
-		format++;
+		return (8);
 	}
-	va_end(my_args);
-	return (count);
+	ptr_Arr[0] = '0';
+	ptr_Arr[1] = 'x';
+	for (y = 19; y >= 2 && temp; y--)
+	{
+		ptr_Arr[y] = "0123456789abcdef"[temp % 16];
+		temp = temp / 16;
+	}
+
+	for (i = 0; i < 20; i++)
+	{
+		_putchar(ptr_Arr[i]);
+	}
+	return (20 - y);
 }
