@@ -30,7 +30,7 @@ It also contains some header files from the C standard library - notably, `stdar
 
 The header file is appropriately guarded to avoid multiple definitions of the same header file.
 
-`#ifndef MAIN_H
+#ifndef MAIN_H
 #define MAIN_H
 
 #include <stdarg.h>  
@@ -80,28 +80,33 @@ int handle_R(va_list my_args);
 int _putchar(char c);  
 
 
-#endif`  
+#endif  
 
 Below are functions used in this implementation:
 ---
 
-**int _printf(const char *format, ...):**
+int _printf(const char *format, ...):
+---
 Custom printf that produces output according to a format.
 
-**int handle_d(va_list my_args):** 
+int handle_d(va_list my_args):
+---
 Function that handles 'd' integer specifiers and prints the corresponding integer.
 
-**int handle_i(va_list my_args):** 
+int handle_i(va_list my_args):
+---
 Function that handles 'i' integer specifiers and prints the corresponding integer.
 
 int handle_format(const char *format, int *i, va_list my_args): 
-    ---
+---
 Handles the format specifier in the given format string.
 
-**int _putchar(char c):** 
+int _putchar(char c):
+---
 Writes the character c to stdout.
 
-**int handle_bin(va_list my_args):** 
+int handle_bin(va_list my_args): 
+---
 Function that handles 'b' specifier and prints the binary representation of an unsigned integer.
 
 int print_bin(unsigned int num): 
